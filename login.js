@@ -1,6 +1,7 @@
 const emailInput = document.querySelector('#email');
 const passInput = document.querySelector('#pass');
 const button = document.querySelector('button');
+const preloader = document.querySelector('.preloader');
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
@@ -8,14 +9,13 @@ button.addEventListener('click', (e) => {
     console.log(emailInput.value);
     console.log(passInput.value);
 
-    document.body.classList.add('loaded_hiding');
+    preloader.classList.add('loading')
 
     setTimeout(
         () => {
             location.href = './my-profile.html';
             document.body.classList.add('loaded');
-            document.body.classList.remove('loaded_hiding');
         },
-        5000
+        2000
     );
 })
